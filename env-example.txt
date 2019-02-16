@@ -1,0 +1,14 @@
+DB_HOST=mysql
+DB_NAME=wordpress
+DB_USER=root
+DB_PASS=ChangeMeIfYouWant
+
+# Server config
+# under "php version" and "mariadb version"
+DB_IMAGE=mariadb:latest
+WP_IMAGE=wordpress:latest
+
+# Migrate SQL
+# Find and replace live URL with local URL
+LIVE_URL=http://example.com
+LOCAL_URL=http://localhost:8080

@@ -1,0 +1,8 @@
+#
+# Ignore the wordpress destination folder for Docker containers
+# Also ignore Wordpress' brain (*.sql) and the archives, which should be added manually
+#
+.env
+wordpress/
+*.zip
+*.sql
