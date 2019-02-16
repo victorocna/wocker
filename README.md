@@ -18,8 +18,8 @@ To edit these options run `cp env-example.txt .env` and modify whatever you wish
 
 First, upload the following files:
 
-* `dump.sql`
-* `wp-content.zip`
+* `dump.sql` -> your exported database file as SQL statements;
+* `wp-content.zip` -> your wp-content folder which contains themes, plugins and image uploads, zipped for convenience.
 
 After that, refer to the **Migrate SQL** section of `.env` file and update your live and local website URLs.
 
