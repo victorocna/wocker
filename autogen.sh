@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # Remove previous versions
-rm -rf wordpress && mkdir wordpress
+if test "$1" = "--clean"
+then
+  rm -rf wordpress && mkdir wordpress
+  ./destroy.sh >/dev/null
+fi
 
 # Use env-example if no environment file is provided
 if [ ! -f ./.env ]
@@ -16,7 +20,7 @@ fi
 if [ ! -f ./dump.sql ]
 then
   echo "No SQL file provided. Using defaults"
-  touch dump.sql
+  touch wordpress/dump.sql
 else
   # Migrate SQL: replace live website URL with local URL
   # Fun tip: to check if this command was successful, count the results like so
@@ -40,7 +44,6 @@ services:
     image: ${DB_IMAGE}
     restart: always
     volumes:
-      - mysql:/var/lib/mysql
       - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
     ports:
       - "3306:3306"
@@ -71,7 +74,7 @@ services:
       - 22222:80
 
 volumes:
-  mysql:
+  mysql: {}
 
 EOL
 
