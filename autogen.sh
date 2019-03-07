@@ -57,6 +57,7 @@ services:
     volumes:
       - ./:/var/www/html
       - ./wp-content/:/var/www/html/wp-content
+      - ../uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     ports:
       - "8080:80"
     links:
@@ -66,6 +67,7 @@ services:
       WORDPRESS_DB_NAME: ${DB_NAME}
       WORDPRESS_DB_USER: ${DB_USER}
       WORDPRESS_DB_PASSWORD: ${DB_PASS}
+      WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX}
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
@@ -84,4 +86,4 @@ echo Using $WP_IMAGE as Wordpress container
 # Fire up docker containers
 # Visit http://localhost:8080 for sanity check
 echo -e "\nStarting your local development environment. Enjoy!\n"
-docker-compose up -d
+docker-compose -p $PROJECT up -d

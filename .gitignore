@@ -3,6 +3,7 @@
 # Also ignore Wordpress' brain (*.sql) and the archives, which should be added manually
 #
 .env
+backup/
 wordpress/
 *.zip
 *.sql
