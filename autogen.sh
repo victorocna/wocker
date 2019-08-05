@@ -3,9 +3,11 @@
 # Remove previous versions
 if test "$1" = "--clean"
 then
-  rm -rf wordpress && mkdir wordpress
+  rm -rf wordpress
   ./destroy.sh >/dev/null
 fi
+
+mkdir wordpress
 
 # Use env-example if no environment file is provided
 if [ ! -f ./.env ]
