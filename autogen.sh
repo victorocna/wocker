@@ -11,7 +11,7 @@ fi
 if [ ! -f ./.env ]
 then
   echo "No environment file provided. Using defaults"
-  source ./env-example.txt
+  source ./.env.example
 else
   source ./.env
 fi

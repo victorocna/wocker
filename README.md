@@ -6,9 +6,9 @@ A Wordpress Docker development environment that helps you migrate back and forth
 
 ### Fresh Wordpress install
 
-Run the following commands to create a fresh Wordpress install, with defaults from the `env-example.txt` file.
+Run the following commands to create a fresh Wordpress install, with defaults from the `.env.example` file.
 
-To edit these options run `cp env-example.txt .env` and modify whatever you wish in the `.env` file.
+To edit these options run `cp .env.example .env` and modify whatever you wish in the `.env` file.
 
 ```bash
 $ ./autogen.sh
